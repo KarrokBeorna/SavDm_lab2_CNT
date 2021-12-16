@@ -11,21 +11,19 @@ if __name__ == '__main__':
     s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     s.bind(('', serverPort))
     dest = ('255.255.255.255', clientPort)
-    answer = NTPPacket()
+    answer = DHCPPacket()
 
     while 1:
         try:
-            #print("Wait DHCP discovery.")
-            print('Wait NTP Packet')
+            print("Wait DHCP discovery.")
             data, address = s.recvfrom(1024)
-            #print("Receive DHCP discovery.")
-            print('Receive NTP Packet')
+            print("Receive DHCP discovery.")
             print(answer.unpack(data).to_display())
 
             #print("Send DHCP offer.")
             data = DHCPPacket(0x350102)
             s.sendto(data.pack(), dest)
-            '''
+
             while 1:
                 try:
                     print("Wait DHCP request.")
@@ -38,6 +36,6 @@ if __name__ == '__main__':
                     break
                 except:
                     raise
-            '''
+
         except:
             raise

@@ -206,15 +206,18 @@ if __name__ == '__main__':
     FORMAT_DIFF = (datetime.date(1970, 1, 1) - datetime.date(1900, 1, 1)).days * 24 * 3600
     # Waiting time for recv (seconds)
     WAITING_TIME = 5
-    dest = ('<broadcast>', 67)  #("pool.ntp.org", 123)
+    dest = ("pool.ntp.org", 123) #('<broadcast>', 67)  #
 
-    packet = NTPPacket(version_number=4, mode=3, transmit=time.time() + FORMAT_DIFF)
-    answer = DHCPPacket()
+    answer = NTPPacket()
+
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-        s.bind(('0.0.0.0', 68))
+        # s.bind(('0.0.0.0', 68))
         s.settimeout(WAITING_TIME)
+        packet = NTPPacket(version_number=4, mode=3, transmit=time.time() + FORMAT_DIFF)
         s.sendto(packet.pack(), dest)
-        data = s.recv(1024)
-        #arrive_time = time.time() + FORMAT_DIFF
+        data = s.recv(48)
+
+        arrive_time = time.time() + FORMAT_DIFF
         print(answer.unpack(data).to_display())
+        print('Arrive Time: ' + str(arrive_time))
