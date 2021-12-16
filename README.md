@@ -1,6 +1,6 @@
 # Lab2 - DHCP Server + NTP Client
 
-RFC NTP - https://datatracker.ietf.org/doc/html/rfc5905
+RFC NTP - https://datatracker.ietf.org/doc/html/rfc5905  
 RFC DHCP - https://datatracker.ietf.org/doc/html/rfc2132
 
 ## DHCP Server
