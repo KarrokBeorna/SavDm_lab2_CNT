@@ -28,3 +28,4 @@ RFC DHCP - https://datatracker.ietf.org/doc/html/rfc2132
 
 ## Вывод в консоль
 
+![image](https://user-images.githubusercontent.com/43076360/146403477-e383718f-fe2b-4187-9df5-f62d50a3a0fe.png)
