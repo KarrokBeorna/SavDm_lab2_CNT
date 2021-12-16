@@ -47,3 +47,9 @@ RFC DHCP - https://datatracker.ietf.org/doc/html/rfc2132
 ## Вывод в консоль
 
 ![image](https://user-images.githubusercontent.com/43076360/146403477-e383718f-fe2b-4187-9df5-f62d50a3a0fe.png)
+
+- `Options 1` - DHCPACK
+- `Options 2` - 255.255.255.0 маска подсети
+- `Options 3` - 192.168.1.1 маршрутизатор
+- `Options 4` - срок аренды IP-адреса (86400 сек - 1 день)
+- `Options 5` - DHCP сервер
