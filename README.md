@@ -3,7 +3,7 @@
 RFC NTP - https://datatracker.ietf.org/doc/html/rfc5905  
 RFC DHCP - https://datatracker.ietf.org/doc/html/rfc2132
 
-[Тест](# вывод-в-консоль)
+[Тест](#вывод-в-консоль)
 
 ## DHCP Server
 
